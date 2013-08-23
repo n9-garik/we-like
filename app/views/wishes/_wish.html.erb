@@ -1,0 +1,23 @@
+<li>
+	<div class="row">
+		<div class="span2">
+		<div><b><%= wish.title %></b></div>
+		<%= image_tag(wish.picture_url(:thumb), class: "img-polaroid") %>
+		<div><%= wish.price %></div>
+	</div>
+<div class="span6">
+			<div class="content"><%= wish.content %></div>
+			<% if current_user?(wish.user) %>
+			<div class="pull-right">
+			<%= link_to 'delete', wish, class: "badge badge-important", method: :delete,
+																	data: { confirm: "You sure?" },
+																	title: "delete" %>
+																</div>
+		  <% end %>
+			<span id="timestamp" class="pull-right">
+		Posted <%= time_ago_in_words(wish.created_at) %> ago.
+	</span>
+	</div>
+	</div>
+	
+</li>

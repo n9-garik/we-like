@@ -1,0 +1,10 @@
+<%= form_for @wish, :html => { :multipart => true } do |f| %>
+<div class="field">
+	<%= f.text_field :title, placeholder: "Назовите желание" %>
+	<%= f.file_field :picture %>
+	<%= f.text_field :remote_picture_url, placeholder: "Ссылка на картинку" %>
+	<%= f.text_area :content, placeholder: "Описание желания" %>
+	<%= f.text_field :price, placeholder: "Цена" %>
+</div>
+<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

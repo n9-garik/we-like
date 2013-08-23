@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h3>Дайте миру узнать, что вам нравится и чего вы заслуживаете!</h3>
+	<p class="lead">
+	Создайте свой список желаний и делитесь им со своими друзьями.
+	</p>
+	<%= link_to "Зарегистрироваться!", new_user_registration_path, class: "btn btn-large btn-success" %>
+</div>
+<hr>
+<div class="row-fluid marketing">
+	<div class="span6">
+		<h3>Записывайте</h3>
+		<p><%= image_tag('1.png', class: "icon") %>
+			Нашли прикольную вещицу? Думаете о покупуке чего-нибудь новенького? Наш сервис поможет собрать все, что в одном месте и ничего не забыть.
+		</p>
+	</div>
+	<div class="span6">
+		<h3>Делитесь</h3>
+		<p><%= image_tag('2.png', class: "icon") %>
+		Сервис We-like позволяет легко поделиться тем, что Вам нравится со всеми кого вы знаете. Вы больше не будете получать подарки, которые вы не 		 хотели.
+	</p>
+	</div>
+</div>
+<hr>
+<div class="pull-left">
+	<b>Последние добавленные:</b>
+</div>
+<div class="pull-right">Всего желаний
+<span class="badge badge-inverse">
+<%= Wish.count %>
+</span>
+</div>
+<br>
+<%= render 'shared/wishes'%>

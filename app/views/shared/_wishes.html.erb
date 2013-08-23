@@ -1,0 +1,16 @@
+<div class="row-fluid">
+<% @wishes.reverse_each do |wish| %>
+<ul class="thumbnails">
+	<li class="span3 offset1">
+		<div><%= image_tag(wish.picture_url(:thumb), class: "img-polaroid") if wish.picture? %></div>
+			<%= wish.title %>
+			
+</li>
+
+<% end %>
+</ul>
+
+
+
+
+

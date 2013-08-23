@@ -1,0 +1,11 @@
+<a href="<%= current_user %>"></a>
+<h1>
+	<%= image_tag(current_user.avatar.thumb, alt: current_user.username, class: "avatar") %>
+	<%= current_user.username %>
+</h1>
+<span>
+	<%= link_to "просмотр профиля", current_user %>
+</span>
+<span>
+	<%= current_user.wishes.count %> Желания
+</span>

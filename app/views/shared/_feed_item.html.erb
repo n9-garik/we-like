@@ -1,0 +1,21 @@
+<li id="<%= feed_item.id %>">
+	
+	<span class="user">
+		<%= link_to feed_item.user.username, feed_item.user %>
+	</span>
+	<div class="row">
+		<div class="span2">
+			<b><%= feed_item.title %></b>
+			<%= image_tag(feed_item.picture_url(:thumb), class: "img-polaroid") %>
+			<%= feed_item.price %>
+		</div>
+		<div class="span6">
+			<div class="content">
+				<%= feed_item.content %>
+			</div>
+		</div>
+	<span id="timestamp" class="pull-right">
+		Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+	</span>
+</div>
+</li>

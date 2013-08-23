@@ -1,0 +1,22 @@
+<% provide(:title, @user.username)%>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1><%= image_tag(@user.avatar_url(:thumb), alt: @user.username, class: "avatar") %>
+			<%= @user.username %></h1>
+		</section>
+		<section>
+			<%= render 'shared/stats'%>
+		</section>
+	</aside>
+	<div class="span8">
+		<%= render 'follow_form' if user_signed_in? %>
+		<% if @user.wishes.any? %>
+			<h3>Желаний (<%= @user.wishes.count %>)</h3>
+			<ol class="wishes">
+				<%= render @wishes%>
+			</ol>
+			<%= will_paginate @wishes %>
+		<% end %>
+	</div>
+</div>
